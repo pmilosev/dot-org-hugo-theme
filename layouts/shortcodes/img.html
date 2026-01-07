@@ -29,10 +29,8 @@
 {{ end }}
 
 {{ if $src }}
-
-{{ if $caption}}
+  <p>
   <figure>
-{{ end }}
   <img
     src="{{ $src }}"
     width="{{ $width }}"
@@ -42,7 +40,7 @@
     >
 {{ if $caption}}
   <figcaption>{{ $caption | markdownify }}</figcaption>
-  </figure>
 {{ end }}
-
+  </figure>
+  </p>
 {{ end }}
