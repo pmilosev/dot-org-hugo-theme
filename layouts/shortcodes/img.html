@@ -32,7 +32,7 @@
 
 {{ if $caption}}
   <figure>
-  {{ end }}
+{{ end }}
   <img
     src="{{ $src }}"
     width="{{ $width }}"
@@ -40,8 +40,8 @@
     alt="{{ $alt | safeHTMLAttr }}"
     loading="{{ $loading }}"
     >
-  {{ if $caption}}
-    <figcaption>{{ $caption | markdownify }}</figcaption>
+{{ if $caption}}
+  <figcaption>{{ $caption | markdownify }}</figcaption>
   </figure>
 {{ end }}
 
