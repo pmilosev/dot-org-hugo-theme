@@ -233,6 +233,8 @@ Options:
 - alt # (optional) describing the image, defaults to filename
 - width # (optional) recommended
 - height # (optional) recommended
+- h_align # (optional) one of [`align-items`](https://www.w3schools.com/cssref/css3_pr_align-items.php) property values
+- v_align # (optional) one of [`justify-content`](https://www.w3schools.com/cssref/css3_pr_justify-content.php) property values
 - caption # (optional) markdown is accepted
 - loading # (optional) defaults to lazy, use eager above the fold
 
