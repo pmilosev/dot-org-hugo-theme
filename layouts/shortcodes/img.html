@@ -2,6 +2,8 @@
 {{ $width := .Get "width" | replaceRE "[^0-9]" "" }}
 {{ $height := .Get "height" | replaceRE "[^0-9]" "" }}
 {{ $caption := .Get "caption" | default "" }}
+{{ $f_width := .Get "f_width" | default "auto" }}
+{{ $f_height := .Get "f_height" | default "auto" }}
 {{ $h_align := .Get "h_align" | default "normal" }}
 {{ $v_align := .Get "v_align" | default "normal" }}
 {{ $loading := .Get "loading" | default "lazy" }}
@@ -38,8 +40,8 @@
   </p>
   <figure
     class="image_figure"
-    style="justify-content: {{ $v_align }}; align-items: {{ $h_align }};"
-      >
+    style="justify-content: {{ $v_align }}; align-items: {{ $h_align }}; width: {{ $f_width }}; height: {{ $f_height }};"
+    >
   <img
     src="{{ $src }}"
     width="{{ $width }}"

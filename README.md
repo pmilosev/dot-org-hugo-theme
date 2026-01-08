@@ -223,6 +223,9 @@ Options:
 ### Img
 
 Inserts an image in a more advanced format than standard Hugo syntax.
+The shortcode wraps the image in a `figure` container, enabling captions.
+You can control the size of the container independent from the image, which
+together with the alignment options allow for more flexible positioning.
 
 ```
 {{< img src="/img/blog/image-name.png" >}}
@@ -233,6 +236,8 @@ Options:
 - alt # (optional) describing the image, defaults to filename
 - width # (optional) recommended
 - height # (optional) recommended
+- f_width # (optional) width of the wrapping figure container
+- f_height # (optional) height of the wrapping figure container
 - h_align # (optional) one of [`align-items`](https://www.w3schools.com/cssref/css3_pr_align-items.php) property values
 - v_align # (optional) one of [`justify-content`](https://www.w3schools.com/cssref/css3_pr_justify-content.php) property values
 - caption # (optional) markdown is accepted
