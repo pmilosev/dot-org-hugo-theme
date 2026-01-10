@@ -1,9 +1,7 @@
 {{ $src := .Get "src" }}
 {{ $width := .Get "width" | replaceRE "[^0-9]" "" }}
 {{ $height := .Get "height" | replaceRE "[^0-9]" "" }}
-{{ $caption := .Get "caption" | default "" }}
-{{ $h_align := .Get "h_align" | default "normal" }}
-{{ $v_align := .Get "v_align" | default "normal" }}
+{{ $caption := .Get "caption" }}
 {{ $loading := .Get "loading" | default "lazy" }}
 
 {{/* Extract the file name from the path */}}
@@ -31,15 +29,10 @@
 {{ end }}
 
 {{ if $src }}
-  <p>
-  <!-- empty paragraph for backward alignment
-      compatibility: 2026-01-07
-  -->
-  </p>
-  <figure
-    class="image_figure"
-    style="justify-content: {{ $v_align }}; align-items: {{ $h_align }};"
-      >
+
+{{ if $caption}}
+  <figure>
+  {{ end }}
   <img
     src="{{ $src }}"
     width="{{ $width }}"
@@ -47,6 +40,9 @@
     alt="{{ $alt | safeHTMLAttr }}"
     loading="{{ $loading }}"
     >
-  <figcaption>{{ $caption | markdownify }}</figcaption>
+  {{ if $caption}}
+    <figcaption>{{ $caption | markdownify }}</figcaption>
   </figure>
+{{ end }}
+
 {{ end }}
